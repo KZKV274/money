@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4a90e2">
+    <meta name="description" content="Учёт расходов - простое PWA приложение">
+    <title>Учёт расходов</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon.svg">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Мои финансы</h1>
+        </header>
+
+        <div class="balance-card">
+            <h2>Ваш баланс</h2>
+            <div id="balance" class="balance-amount">0.00 ₽</div>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card income">
+                <h3>Доходы</h3>
+                <p id="money-plus" class="money plus">+0.00 ₽</p>
+            </div>
+            <div class="stat-card expense">
+                <h3>Расходы</h3>
+                <p id="money-minus" class="money minus">-0.00 ₽</p>
+            </div>
+        </div>
+
+        <section class="history">
+            <h3>История операций</h3>
+            <ul id="list" class="list">
+                <!-- Транзакции будут здесь -->
+            </ul>
+        </section>
+
+        <section class="add-transaction">
+            <h3>Добавить операцию</h3>
+            <form id="form">
+                <div class="form-control">
+                    <label for="text">Название</label>
+                    <input type="text" id="text" placeholder="Введите название..." required />
+                </div>
+                <div class="form-control">
+                    <label for="amount">Сумма (отрицательная - расход, положительная - доход)</label>
+                    <input type="number" step="0.01" id="amount" placeholder="Введите сумму..." required />
+                </div>
+                <button class="btn">Добавить</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
